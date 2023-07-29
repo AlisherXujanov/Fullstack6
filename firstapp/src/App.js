@@ -1,11 +1,13 @@
 import Header from './components/Header'
-import Table from './components/Table.jsx'
 
 function App() {
+  const lorem = "Lorem ipsum dolor sit amet con"
+
   return (
     <div className="App">
-      <Header />
-      <Table />
+      <Header test={lorem}>
+        <h2>All children</h2>
+      </Header>
     </div>
   );
 }
