@@ -1,0 +1,28 @@
+nav {
+    overflow: hidden;
+    background-color: #333;
+
+    #logo {
+        float: left;
+    }
+    a {
+        float: right;
+        padding: 10px 20px;
+        text-decoration: none;
+        transition: 0.2s;
+
+        &:link {
+            color: snow;
+        }
+        &:visited {
+            color: #eee;
+        }
+        &:hover {
+            background-color: red;
+        }
+        &:active {
+            transform: scale(0.6);
+            background-color: darkred;
+        }
+    }
+}
