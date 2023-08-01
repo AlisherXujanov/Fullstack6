@@ -1,3 +1,5 @@
+import './theme.scss'
+
 function Theme() {
     return (
         <div className="theme">

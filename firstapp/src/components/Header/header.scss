@@ -5,6 +5,10 @@ nav {
     #logo {
         float: left;
     }
+    #theme-link {
+        padding: 10px 30px;
+        position: relative;
+    }
     a {
         float: right;
         padding: 10px 20px;
@@ -17,10 +21,10 @@ nav {
         &:visited {
             color: #eee;
         }
-        &:hover {
+        &:hover:not(#theme-link) {
             background-color: red;
         }
-        &:active {
+        &:active:not(#theme-link) {
             transform: scale(0.6);
             background-color: darkred;
         }
