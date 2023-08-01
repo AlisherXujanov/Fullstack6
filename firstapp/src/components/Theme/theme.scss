@@ -1,20 +1,25 @@
 .theme {
     position: relative;
-    width: 50px;
+    width: 45px;
     height: 22px;
     background-color: gray;
     box-sizing: border-box;
     padding: 1px;
     border-radius: 20px;
+    * {
+        transition: 0.3s linear;
+    }
 
     input[type="checkbox"],
     .theme-toggler {
         position: absolute;
     }
-
     input[type="checkbox"] {
         z-index: 10;
-        
+        width: 45px;
+        height: 16px;
+        top: 3px;
+        opacity: 0;
     }
     .theme-toggler {
         z-index: 5;
@@ -22,5 +27,9 @@
         height: 20px;
         background-color: lightgray;
         border-radius: 50%;
+    }
+
+    input[type="checkbox"]:checked ~ .theme-toggler {
+        transform: translateX(23px);
     }
 }
