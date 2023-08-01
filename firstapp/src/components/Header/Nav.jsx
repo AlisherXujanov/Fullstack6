@@ -3,7 +3,12 @@ import Theme from '../Theme'
 import { useState } from 'react'
 
 function Nav() {
-    const [theme, setTheme] = useState('light')
+    const [theme, setTheme] = useState(false)
+
+    function changeTheme() {
+        console.log('change theme: ' + theme)
+        return setTheme(!theme)
+    }
 
     return (
         <nav className={theme ? "dark-theme" : "light-theme"} style={style}>
@@ -12,7 +17,7 @@ function Nav() {
             <a href="#">Contacts</a>
             <a href="#">About</a>
             <a href="#">Profile</a>
-            <a id='theme-link' href="#">
+            <a id='theme-link' href="#" onClick={changeTheme}>
                 <Theme />
             </a>
         </nav>
