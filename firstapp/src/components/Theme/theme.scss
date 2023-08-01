@@ -16,20 +16,23 @@
     }
     input[type="checkbox"] {
         z-index: 10;
-        width: 45px;
-        height: 16px;
-        top: 3px;
+        width: 55px;
+        height: 30px;
+        bottom: -5px;
+        left: -5px;
         opacity: 0;
     }
     .theme-toggler {
         z-index: 5;
         width: 20px;
         height: 20px;
-        background-color: lightgray;
         border-radius: 50%;
+        font-size: 20px;
+        bottom: 5px;
+        left: -2px;
     }
 
     input[type="checkbox"]:checked ~ .theme-toggler {
-        transform: translateX(23px);
+        transform: translateX(23px) rotate(360deg);
     }
 }

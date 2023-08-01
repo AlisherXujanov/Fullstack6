@@ -1,12 +1,14 @@
 import style from './header.scss'
 import Theme from '../Theme'
+import audioFile from '../../click.mp3'
 import { useState } from 'react'
 
 function Nav() {
     const [theme, setTheme] = useState(false)
 
     function changeTheme() {
-        console.log('change theme: ' + theme)
+        const audio = new Audio(audioFile)
+        audio.play()
         return setTheme(!theme)
     }
 
@@ -18,7 +20,7 @@ function Nav() {
             <a href="#">About</a>
             <a href="#">Profile</a>
             <a id='theme-link' href="#" onClick={changeTheme}>
-                <Theme />
+                <Theme theme={theme} />
             </a>
         </nav>
     );

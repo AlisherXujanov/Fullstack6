@@ -1,10 +1,12 @@
 import './theme.scss'
 
-function Theme() {
+function Theme(props) {
     return (
         <div className="theme">
             <input type="checkbox" />
-            <span className="theme-toggler"></span>
+            <span className="theme-toggler">
+                {props.theme ? '🌙' : '☀️'}
+            </span>
         </div>
     );
 }

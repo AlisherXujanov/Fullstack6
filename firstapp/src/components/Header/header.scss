@@ -6,12 +6,11 @@ nav {
         float: left;
     }
     #theme-link {
-        padding: 10px 30px;
-        position: relative;
+        margin: 8px 20px;
+        border-radius: 30px;
     }
     a {
         float: right;
-        padding: 10px 20px;
         text-decoration: none;
         transition: 0.2s;
 
@@ -28,6 +27,9 @@ nav {
             transform: scale(0.6);
             background-color: darkred;
         }
+    }
+    a:not(#theme-link) {
+        padding: 10px 20px;
     }
 }
 .dark-theme {
