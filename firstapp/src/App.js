@@ -8,6 +8,7 @@ function App() {
       <Header test={lorem}>
         <h2>All children</h2>
       </Header>
+      
     </div>
   );
 }
