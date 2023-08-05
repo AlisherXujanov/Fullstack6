@@ -2,7 +2,7 @@ import Header from './components/Header'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from "./components/Home.jsx"
 import About from "./components/About.jsx"
-import NotFound from "./components/NotFound.jsx"
+import NotFound from "./components/NotFound"
 
 function App() {
   return (
