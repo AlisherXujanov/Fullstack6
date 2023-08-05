@@ -1,7 +1,7 @@
 import style from './header.scss'
 import Theme from '../Theme'
-import audioFile from '../../click.mp3'
-import linkAudioFile from '../../link_click.mp3'
+import audioFile from '../../Assets/Sounds/click.mp3'
+import linkAudioFile from '../../Assets/Sounds/link_click.mp3'
 import { useState } from 'react'
 import { Outlet, Link } from 'react-router-dom'
 
