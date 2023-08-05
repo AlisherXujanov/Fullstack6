@@ -3,6 +3,7 @@ import Theme from '../Theme'
 import audioFile from '../../click.mp3'
 import linkAudioFile from '../../link_click.mp3'
 import { useState } from 'react'
+import { Outlet, Link } from 'react-router-dom'
 
 function Nav() {
     const [theme, setTheme] = useState(false)
@@ -11,7 +12,6 @@ function Nav() {
         const audio = new Audio(linkAudioFile)
         audio.play()
     }
-
     function changeTheme() {
         const audio = new Audio(audioFile)
         audio.play()
@@ -19,16 +19,18 @@ function Nav() {
     }
 
     return (
-        <nav className={theme ? "dark-theme" : "light-theme"} style={style}>
-            <a id="logo" href="#">Logo</a>
+        <div>
+            <nav className={theme ? "dark-theme" : "light-theme"} style={style}>
+                <Link id="logo" to="/" onClick={playAudio}>Logo</Link>
+                <Link to="/" onClick={playAudio}>Home</Link>
+                <Link to="/About" onClick={playAudio}>About</Link>
 
-            <a href="#" onClick={playAudio}>Contacts</a>
-            <a href="#" onClick={playAudio}>About</a>
-            <a href="#" onClick={playAudio}>Profile</a>
-            <a id='theme-link' href="#" onClick={changeTheme}>
-                <Theme theme={theme} />
-            </a>
-        </nav>
+                <a id='theme-link' href="#" onClick={changeTheme}>
+                    <Theme theme={theme} />
+                </a>
+            </nav>
+            <Outlet />
+        </div>
     );
 }
 

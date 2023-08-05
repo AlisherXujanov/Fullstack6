@@ -1,26 +1,21 @@
 import Header from './components/Header'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from "./components/Home.jsx"
+import About from "./components/About.jsx"
+import NotFound from "./components/NotFound.jsx"
 
 function App() {
-  const lorem = "Lorem ipsum dolor sit amet con"
-
   return (
     <div className="App">
-      <Header test={lorem}>
-        <h2>All children</h2>
-      </Header>
-
-
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={""} >
-            <Route index element={""} />
-            <Route path="about" element={""} />
-            <Route path="*" element={""} />
+          <Route path="/" element={<Header />} >
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
-
     </div>
   );
 }
