@@ -13,12 +13,22 @@ function Posts() {
     }
 
     function setTitleFunction(e) {
-        // Note: Validate this first
-        setTitle(e.target.value)
+        const value = e.target.value
+        const titlePattern = /^[a-zA-Z0-9 ]*$/
+        if (!titlePattern.test(value)) {
+            return setErrorFields({
+                titleError: 'Title must be alphanumeric'
+            })
+        } else {
+            setErrorFields({
+                titleError: ""
+            })
+        }
+        setTitle(value)
     }
     function setDescriptionFunction(e) {
-        // Note: Validate this first
-        setDescription(e.target.value)
+        const value = e.target.value
+        setDescription(value)
     }
 
     return (
@@ -37,7 +47,7 @@ function Posts() {
                         onChange={e => setTitleFunction(e)}
                     />
                     <p>
-                        <small>{errorFields.titleError}</small>
+                        <small className='error'>{errorFields.titleError}</small>
                     </p>
                 </div>
                 <div className="form-control">
@@ -48,7 +58,7 @@ function Posts() {
                         onChange={e => setDescriptionFunction(e)}
                     ></textarea>
                     <p>
-                        <small>{errorFields.descriptionError}</small>
+                        <small className='error'>{errorFields.descriptionError}</small>
                     </p>
                 </div>
                 <div className="form-control">
