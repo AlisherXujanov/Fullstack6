@@ -1,0 +1,28 @@
+form {
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+
+    textarea,
+    input {
+        text-align: left;
+        width: 100%;
+        display: block;
+        outline: none;
+        border: none;
+        background-color: darkgray;
+        padding: 10px 20px;
+        border-radius: 5px;
+
+        &::placeholder {
+            color: gray;
+        }
+        &:focus {
+            background-color: lightgray;
+        }
+    }
+    button {
+        width: 100%;
+    }
+}
