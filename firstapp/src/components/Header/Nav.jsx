@@ -23,7 +23,8 @@ function Nav() {
             <nav className={theme ? "dark-theme" : "light-theme"} style={style}>
                 <Link id="logo" to="/" onClick={playAudio}>Logo</Link>
                 <Link to="/" onClick={playAudio}>Home</Link>
-                <Link to="/About" onClick={playAudio}>About</Link>
+                <Link to="/about" onClick={playAudio}>About</Link>
+                <Link to="/posts" onClick={playAudio}>Posts</Link>
 
                 <a id='theme-link' href="#" onClick={changeTheme}>
                     <Theme theme={theme} />
