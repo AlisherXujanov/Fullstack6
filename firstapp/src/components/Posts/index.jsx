@@ -19,6 +19,7 @@ function Posts() {
                 description: description
             }
             setPosts([...posts, newPost])
+            e.target.reset()
         }
     }
 
@@ -26,6 +27,12 @@ function Posts() {
         const result = posts.find(post => post.title == title)
         if (result) {
             setErrorFields({titleError: 'This title is already in use!'})
+            return false
+        } else if (title.length == 0) {
+            setErrorFields({titleError: 'This field is required!'})
+            return false
+        } else if (description.length == 0) {
+            setErrorFields({descriptionError: 'This field is required!'})
             return false
         } else {
             setErrorFields({titleError: ""})
