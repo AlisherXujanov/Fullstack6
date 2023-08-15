@@ -89,7 +89,7 @@ function Posts() {
                                 </div>
                                 <div className="form-control">
                                     <button>
-                                        submit
+                                        Submit
                                     </button>
                                 </div>
                             </form>
@@ -104,7 +104,10 @@ function Posts() {
                         posts.map((post, index) => {
                             return (
                                 <div key={index}>
-                                    <Post post={post} />
+                                    <Post 
+                                        title={post.title} 
+                                        description={post.description}
+                                    />
                                 </div>
                             )
                         })

@@ -30,10 +30,39 @@ form {
     }
     button {
         width: 100%;
+        transition: 0.3s linear;
+        outline: none;
+        border: 1px solid green;
+        padding: 10px 20px;
+        display: block;
+        border-radius: 5px;
+        color: green;
+
+        &:hover {
+            cursor: pointer;
+            background-color: green;
+            color: snow;
+        }
     }
     .error {
         color: red;
         font-family: cursive;
         font-style: italic;
+    }
+}
+
+.all-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+@media (max-width: 768px) {
+    .all-posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .all-posts {
+        grid-template-columns: 1fr;
     }
 }

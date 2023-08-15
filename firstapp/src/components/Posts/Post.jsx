@@ -1,7 +1,12 @@
-function Post(props) {
+import postStyle from './post.scss'
+
+function Post({ title, description }) {
     return (
-        <div className="post">
-            <h2>Post</h2>
+        <div style={postStyle} className="post">
+            <h3>{title}</h3>
+            <p>
+                <em>{description}</em>
+            </p>
         </div>
     );
 }
