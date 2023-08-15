@@ -1,7 +1,7 @@
-import { Row, Col, Button, Container, Accordion } from 'react-bootstrap'
+import { Container, Accordion } from 'react-bootstrap'
 import { useState } from 'react'
 import postsStyle from './posts.scss'
-
+import Post from './Post.jsx'
 
 
 function Posts() {
@@ -22,7 +22,16 @@ function Posts() {
         }
     }
 
-    function validated() { }
+    function validated() {
+        const result = posts.find(post => post.title == title)
+        if (result) {
+            setErrorFields({titleError: 'This title is already in use!'})
+            return false
+        } else {
+            setErrorFields({titleError: ""})
+            return true
+        }
+    }
 
 
     function setTitleFunction(e) {
@@ -56,9 +65,6 @@ function Posts() {
                             <form onSubmit={submit}>
                                 <h1>Create Post</h1>
 
-                                <p>{title}</p>
-                                <p>{description}</p>
-
                                 <div className="form-control">
                                     <label htmlFor="title">Title</label>
                                     <input
@@ -82,9 +88,9 @@ function Posts() {
                                     </p>
                                 </div>
                                 <div className="form-control">
-                                    <Button variant='outline-success'>
-                                        Submit
-                                    </Button>
+                                    <button>
+                                        submit
+                                    </button>
                                 </div>
                             </form>
                         </Accordion.Body>
@@ -93,7 +99,17 @@ function Posts() {
 
 
                 <hr />
-
+                <div className='all-posts'>
+                    { posts.length > 0 ? 
+                        posts.map((post, index) => {
+                            return (
+                                <div key={index}>
+                                    <Post post={post} />
+                                </div>
+                            )
+                        })
+                    : <p>No posts today!!!</p>}
+                </div>
 
             </Container>
         </div>
