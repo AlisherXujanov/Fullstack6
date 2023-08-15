@@ -1,7 +1,7 @@
 import { Container, Accordion } from 'react-bootstrap'
 import { useState } from 'react'
 import postsStyle from './posts.scss'
-import Post from './Post.jsx'
+import Pagination from './Pagination.jsx'
 
 
 function Posts() {
@@ -32,7 +32,7 @@ function Posts() {
         } else if (title.length == 0) {
             setErrorFields({ titleError: 'This field is required!' })
             return false
-        } else if (description.length == 0) {
+        } else if (!description) {
             setErrorFields({ descriptionError: 'This field is required!' })
             return false
         } else {
@@ -107,18 +107,14 @@ function Posts() {
 
                 <hr />
 
-                <div className='all-posts'>
+                <div>
                     {posts.length > 0 ?
-                        posts.map((post, index) => {
-                            return (
-                                <div key={index}>
-                                    <Post
-                                        title={post.title}
-                                        description={post.description}
-                                    />
-                                </div>
-                            )
-                        })
+                        <Pagination 
+                            elements={posts}
+                            elClass="post"
+                            containerClass="all-posts"
+                            itemsPerPage={6}
+                        />
                         : <h4 style={{ textAlign: 'center' }}>
                             <em>No posts today!!!</em>
                         </h4>}

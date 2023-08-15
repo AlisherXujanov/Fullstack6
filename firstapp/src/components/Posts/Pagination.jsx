@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
-
+import Post from './Post.jsx'
 
 function Items({ elements, elClass, containerClass, itemsPerPage }) {
     let [page, setPage] = useState(1);
@@ -14,7 +14,7 @@ function Items({ elements, elClass, containerClass, itemsPerPage }) {
             <Pagination.Item
                 key={i}
                 active={current === page}
-                onClick={() => setPage(i + 1)}
+                onClick={() => setPage(current)}
             >
                 {current}
             </Pagination.Item>
@@ -52,12 +52,10 @@ function Items({ elements, elClass, containerClass, itemsPerPage }) {
                             id={element.id + "-" + elClass}
                             className={elClass}
                         >
-                            <h3>{element.content}</h3>
-                            <p>
-                                <em>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam magni ex, nihil cum alias molestias.
-                                </em>
-                            </p>
+                            <Post
+                                title={element.title}
+                                description={element.description}
+                            />
                         </div>
                     ))}
             </div>
