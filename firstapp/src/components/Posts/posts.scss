@@ -55,6 +55,7 @@ form {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    padding: 10px 0;
 }
 @media (max-width: 768px) {
     .all-posts {

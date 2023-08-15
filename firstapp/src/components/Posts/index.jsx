@@ -25,21 +25,21 @@ function Posts() {
 
     function validated() {
         const result = posts.find(post => post.title == title)
+
         if (result) {
-            setErrorFields({titleError: 'This title is already in use!'})
+            setErrorFields({ titleError: 'This title is already in use!' })
             return false
         } else if (title.length == 0) {
-            setErrorFields({titleError: 'This field is required!'})
+            setErrorFields({ titleError: 'This field is required!' })
             return false
         } else if (description.length == 0) {
-            setErrorFields({descriptionError: 'This field is required!'})
+            setErrorFields({ descriptionError: 'This field is required!' })
             return false
         } else {
-            setErrorFields({titleError: ""})
+            setErrorFields({ titleError: "", descriptionError: "" })
             return true
         }
     }
-
 
     function setTitleFunction(e) {
         const value = e.target.value
@@ -106,19 +106,22 @@ function Posts() {
 
 
                 <hr />
+
                 <div className='all-posts'>
-                    { posts.length > 0 ? 
+                    {posts.length > 0 ?
                         posts.map((post, index) => {
                             return (
                                 <div key={index}>
-                                    <Post 
-                                        title={post.title} 
+                                    <Post
+                                        title={post.title}
                                         description={post.description}
                                     />
                                 </div>
                             )
                         })
-                    : <p>No posts today!!!</p>}
+                        : <h4 style={{ textAlign: 'center' }}>
+                            <em>No posts today!!!</em>
+                        </h4>}
                 </div>
 
             </Container>
