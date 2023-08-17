@@ -34,8 +34,10 @@ function Posts() {
     }
 
     useEffect(() => {
-        setAllPostsIntoLS(posts)
         setPosts(getAllPostsFromLS())
+    }, [])
+    useEffect(() => {
+        setAllPostsIntoLS(posts)
     }, [posts])
 
 
