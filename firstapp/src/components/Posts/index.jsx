@@ -5,12 +5,12 @@ import Pagination from './Pagination.jsx'
 
 
 function Posts() {
+    const POSTS_KEY_LS = 'posts'
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState(getAllPostsFromLS())
     const [errorFields, setErrorFields] = useState({})
 
-    const POSTS_KEY_LS = 'posts'
 
     function submit(e) {
         e.preventDefault()
@@ -33,9 +33,7 @@ function Posts() {
         return JSON.parse(all_posts) || []
     }
 
-    useEffect(() => {
-        setPosts(getAllPostsFromLS())
-    }, [])
+
     useEffect(() => {
         setAllPostsIntoLS(posts)
     }, [posts])
@@ -127,7 +125,7 @@ function Posts() {
 
                 <div>
                     {posts.length > 0 ?
-                        <Pagination 
+                        <Pagination
                             elements={posts}
                             elClass="post"
                             containerClass="all-posts"
