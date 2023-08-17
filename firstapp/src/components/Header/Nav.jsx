@@ -1,5 +1,6 @@
 import style from './header.scss'
 import Theme from '../Theme'
+import Footer from './Footer.jsx'
 import audioFile from '../../Assets/Sounds/click.mp3'
 import linkAudioFile from '../../Assets/Sounds/link_click.mp3'
 import { useState } from 'react'
@@ -20,6 +21,7 @@ function Nav() {
 
     return (
         <div>
+            <span id='top-id'></span>
             <nav className={theme ? "dark-theme" : "light-theme"} style={style}>
                 <Link id="logo" to="/" onClick={playAudio}>Logo</Link>
                 <Link to="/" onClick={playAudio}>Home</Link>
@@ -30,7 +32,12 @@ function Nav() {
                     <Theme theme={theme} />
                 </a>
             </nav>
+
             <Outlet />
+            
+            <footer>
+                <Footer />
+            </footer>
         </div>
     );
 }

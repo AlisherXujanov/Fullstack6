@@ -11,7 +11,6 @@ function Posts() {
     const [posts, setPosts] = useState(getAllPostsFromLS())
     const [errorFields, setErrorFields] = useState({})
 
-
     function submit(e) {
         e.preventDefault()
 
@@ -28,16 +27,15 @@ function Posts() {
     function setAllPostsIntoLS(posts) {
         localStorage.setItem(POSTS_KEY_LS, JSON.stringify(posts))
     }
+
     function getAllPostsFromLS() {
         const all_posts = localStorage.getItem(POSTS_KEY_LS)
         return JSON.parse(all_posts) || []
     }
 
-
     useEffect(() => {
         setAllPostsIntoLS(posts)
     }, [posts])
-
 
     function validated() {
         const result = posts.find(post => post.title == title)
