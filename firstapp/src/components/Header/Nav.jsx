@@ -21,7 +21,6 @@ function Nav() {
 
     return (
         <div>
-            <span id='top-id'></span>
             <nav className={theme ? "dark-theme" : "light-theme"} style={style}>
                 <Link id="logo" to="/" onClick={playAudio}>Logo</Link>
                 <Link to="/" onClick={playAudio}>Home</Link>

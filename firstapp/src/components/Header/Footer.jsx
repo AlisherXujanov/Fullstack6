@@ -1,13 +1,14 @@
 import logo from '../../Assets/Images/logo.png'
+import footerStyle from './footer.scss'
 
 function Footer() {
     return (
-        <div className="footer">
+        <div style={footerStyle} className="footer-container">
             <div className="left">
                 <img
                     src={logo}
                     alt="AC logo"
-                    width={30} height={40}
+                    width={50} height={40}
                 />
                 ©️ 2023 <br />
                 by Alisher Company and Fullstack Co.

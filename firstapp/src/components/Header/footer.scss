@@ -1,0 +1,45 @@
+footer {
+    background: linear-gradient(to bottom, rgb(0, 255, 0, 0.1), rgb(0, 255, 0, 0.3), rgb(0, 255, 0, 0.5));
+    padding: 20px;
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+
+        .left {
+            padding: 20px;
+            img {
+                margin-right: 20px;
+            }
+        }
+
+        .right {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            text-align: left;
+            font-family: sans-serif;
+            ul {
+                list-style-type: none;
+                li {
+                    padding: 10px 20px;
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 1.2rem;
+                        &:hover {
+                            color: yellowgreen;
+                        }
+                    }
+                }
+            }
+            #go-to-top {
+                a {
+                    font-size: 50px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

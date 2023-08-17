@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <div id='peak'>
-            <header>
+            <header id='top-id'>
                 <h1 style={headingStyle}>Header Text</h1>
             </header>
 
