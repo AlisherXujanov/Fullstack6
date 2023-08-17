@@ -46,9 +46,9 @@ function Items({ elements, elClass, containerClass, itemsPerPage }) {
             <div className={containerClass ?? 'all-items-pagination'}>
                 {elements
                     .slice((page - 1) * itemsPerPage, page * itemsPerPage)
-                    .map(element => (
+                    .map((element, index) => (
                         <div
-                            key={element.id}
+                            key={index}
                             id={element.id + "-" + elClass}
                             className={elClass}
                         >

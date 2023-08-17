@@ -1,5 +1,5 @@
 import { Container, Accordion } from 'react-bootstrap'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import postsStyle from './posts.scss'
 import Pagination from './Pagination.jsx'
 
@@ -9,6 +9,8 @@ function Posts() {
     const [description, setDescription] = useState('')
     const [posts, setPosts] = useState([])
     const [errorFields, setErrorFields] = useState({})
+
+    const POSTS_KEY_LS = 'posts'
 
     function submit(e) {
         e.preventDefault()
@@ -22,6 +24,20 @@ function Posts() {
             e.target.reset()
         }
     }
+
+    function setAllPostsIntoLS(posts) {
+        localStorage.setItem(POSTS_KEY_LS, JSON.stringify(posts))
+    }
+    function getAllPostsFromLS() {
+        const all_posts = localStorage.getItem(POSTS_KEY_LS)
+        return JSON.parse(all_posts) || []
+    }
+
+    useEffect(() => {
+        setAllPostsIntoLS(posts)
+        setPosts(getAllPostsFromLS())
+    }, [posts])
+
 
     function validated() {
         const result = posts.find(post => post.title == title)

@@ -1,14 +1,26 @@
 .main-posts-body {
-    background-color: #ccc;
+    background-color: #cccccc50;
     border-radius: 10px;
     padding-top: 5px;
 }
-
+.accordion,
+.accordion-item,
+.accordion-collapse,
+.collapse,
+.accordion-body,
+.show {
+    background-color: #cccccc50;
+}
 form {
     width: 60%;
     margin: 0 auto;
     padding: 10px;
     text-align: center;
+    background-color: #cccccc50;
+
+    .form-control {
+        background-color: #eeeeee50;
+    }
 
     textarea,
     input {
@@ -17,15 +29,15 @@ form {
         display: block;
         outline: none;
         border: none;
-        background-color: darkgray;
+        background-color: rgb(169, 169, 169, 50);
         padding: 10px 20px;
         border-radius: 5px;
 
         &::placeholder {
-            color: gray;
+            color: rgb(126, 126, 126, 50);
         }
         &:focus {
-            background-color: lightgray;
+            background-color: rgb(208, 208, 208, 50);
         }
     }
     button {
