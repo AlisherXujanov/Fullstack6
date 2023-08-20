@@ -79,10 +79,10 @@ function Posts() {
     return (
         <div style={postsStyle}>
             <Container className='main-posts-body'>
-                <Accordion>
-                    <Accordion.Item eventKey="0">
+                <Accordion className="custom-accordion">
+                    <Accordion.Item className="custom-accordion-item" eventKey="0">
                         <Accordion.Header>Create a new post</Accordion.Header>
-                        <Accordion.Body>
+                        <Accordion.Body  className="custom-accordion-body">
                             <form onSubmit={submit}>
                                 <h1>Create Post</h1>
 
