@@ -1,12 +1,12 @@
 import Nav from './Nav.jsx'
 import "./header.scss"
-
+import CarouselComponent from '../CarouselComponent'
 
 const Navigation = () => {
     return (
         <div id='peak'>
             <header id='top-id'>
-                <h1>Hello world</h1>
+               <CarouselComponent />
             </header>
 
             <Nav />

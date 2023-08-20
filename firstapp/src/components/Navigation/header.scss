@@ -3,6 +3,8 @@ nav {
     background-color: #333;
     position: sticky;
     top: 0;
+    z-index: 999;
+    /* this is to make sure the nav bar is always on top of other elements */
 
     #logo {
         float: left;
@@ -34,31 +36,6 @@ nav {
         padding: 10px 20px;
     }
 }
-.dark-theme {
-    background-color: #333;
-    color: snow;
-}
-.light-theme {
-    background-color: lightgray;
-    a {
-        &:link {
-            color: black;
-        }
-        &:visited {
-            color: rgb(31, 0, 53);
-        }
-        &:hover:not(#theme-link) {
-            background-color: #333;
-            color: snow;
-        }
-        &:active:not(#theme-link) {
-            transform: scale(0.6);
-            background-color: #111;
-            color: snow;
-        }
-    }
-}
-
 header {
     min-height: 150px;
     display: flex;
@@ -70,4 +47,5 @@ header {
 
 #outlet {
     min-height: 70vh;
+    padding: 50px;
 }
