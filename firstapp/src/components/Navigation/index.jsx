@@ -1,16 +1,12 @@
 import Nav from './Nav.jsx'
 import "./header.scss"
 
-const Header = () => {
 
-    let headingStyle = { 
-        color: "red", 
-    }
-
+const Navigation = () => {
     return (
         <div id='peak'>
             <header id='top-id'>
-                <h1 style={headingStyle}>Header Text</h1>
+                <h1>Hello world</h1>
             </header>
 
             <Nav />
@@ -18,4 +14,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Navigation;

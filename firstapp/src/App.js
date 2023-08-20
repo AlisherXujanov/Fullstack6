@@ -1,23 +1,15 @@
-import Header from './components/Header'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from "./components/Home.jsx"
-import About from "./components/About.jsx"
-import NotFound from "./components/NotFound"
-import Posts from './components/Posts'
+import { BrowserRouter } from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css"
+import AnimatedComponents from './components/Navigation/AnimatedComponents';
 
 function App() {
+  // useLocation is a hook that returns the location object that 
+  // represents the current URL. You can think about it like a 
+  // useState that returns a new location whenever the URL changes.
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Header />} >
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="posts" element={<Posts />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
+        <AnimatedComponents />
       </BrowserRouter>
     </div>
   );

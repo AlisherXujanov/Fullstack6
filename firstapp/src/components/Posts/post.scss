@@ -3,22 +3,4 @@
     padding: 15px;
     border-radius: 5px;
     color: snow;
-    font-family: sans-serif;
-    height: 220px;
-    overflow: auto;
-
-    &::-webkit-scrollbar {
-        width: 5px;
-        border-radius: 20px;
-        background-color: #00feff;
-    }
-    &::-webkit-scrollbar-thumb {
-        width: 5px;
-        border-radius: 20px;
-        background-color: #097949;
-    }
-    p {
-        font-family: cursive;
-        margin-top: 10px;
-    }
 }

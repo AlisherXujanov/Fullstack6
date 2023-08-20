@@ -3,8 +3,11 @@ import Theme from '../Theme'
 import Footer from './Footer.jsx'
 import audioFile from '../../Assets/Sounds/click.mp3'
 import linkAudioFile from '../../Assets/Sounds/link_click.mp3'
-import { useState } from 'react'
+
 import { Outlet, Link } from 'react-router-dom'
+import { useState } from 'react'
+
+
 
 function Nav() {
     const [theme, setTheme] = useState(false)
@@ -32,8 +35,10 @@ function Nav() {
                 </a>
             </nav>
 
-            <Outlet />
-            
+            <div id='outlet'>
+                <Outlet />
+            </div>
+
             <footer>
                 <Footer />
             </footer>

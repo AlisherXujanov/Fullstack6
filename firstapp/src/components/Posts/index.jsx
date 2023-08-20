@@ -1,5 +1,6 @@
 import { Container, Accordion } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import postsStyle from './posts.scss'
 import Pagination from './Pagination.jsx'
 
@@ -76,8 +77,18 @@ function Posts() {
         setDescription(value)
     }
 
+    const initialMotion = { transform: 'translateY(-100vw)' }
+    const animate = { transform: 'translateY(0)' }
+    const exit = { transform: 'translateY(100vw) scale(0) rotate(720deg)' }
+            
+
     return (
-        <div style={postsStyle}>
+        <motion.div 
+            style={postsStyle}
+            initial={initialMotion}
+            animate={animate}
+            exit={exit}
+        >
             <Container className='main-posts-body'>
                 <Accordion className="custom-accordion">
                     <Accordion.Item className="custom-accordion-item" eventKey="0">
@@ -135,7 +146,7 @@ function Posts() {
                 </div>
 
             </Container>
-        </div>
+        </motion.div>
     );
 }
 
