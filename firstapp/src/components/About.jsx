@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import ToggleC from './ToggleC.jsx'
 
 function About() {
     const initialMotion = { transform: 'scale(-1)' }
@@ -12,6 +13,8 @@ function About() {
         >
             <h1>About</h1>
             <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Текста, продолжил свое большой домах маленькая своих маленький использовало вершину путь, жаренные по всей. Образ путь живет все. Заголовок, буквенных собрал.</p>
+            <hr />
+            <ToggleC />
         </motion.div>
     );
 }
