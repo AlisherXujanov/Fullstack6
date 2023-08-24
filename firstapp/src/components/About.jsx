@@ -2,36 +2,31 @@ import { motion } from 'framer-motion'
 import ToggleC from './ToggleC.jsx'
 import img from '../Assets/Images/1.jpg'
 import Button from 'react-bootstrap/Button'
-import { useReducer } from 'react'
+import { useContext } from 'react'
+import { context } from '../Store.js'
 
-const initialState = {
-    translateValue: 0,
-    left: "-200px",
-    right: "200px",
-}
+// const reducer = (state, action) => {
+//     //* RULE:
+//     //! Everything that is returned from this function becomes the new state
 
-const reducer = (state, action) => {
-    //* RULE:
-    //! Everything that is returned from this function becomes the new state
+//     switch (action.move) {
+//         case 'left':
+//             return { ...state, translateValue: state.left}
+//         case 'right':
+//             return { ...state, translateValue: state.right}
+//         case 'reset':
+//             return { ...state, translateValue: "0"}
+//         default:
+//             throw new Error("Unknown action")
+//     }
+// }
 
-    switch (action.move) {
-        case 'left':
-            return { ...state, translateValue: state.left}
-        case 'right':
-            return { ...state, translateValue: state.right}
-        case 'reset':
-            return { ...state, translateValue: "0"}
-        default:
-            throw new Error("Unknown action")
-    }
-}
-
-function About() {
+function About({ dispatch }) {
     const initialMotion = { transform: 'scale(-1)' }
     const animate = { transform: 'scale(1)' }
     const exit = { transform: 'scale(0)' }
 
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const state = useContext(context)
 
     return (
         <motion.div
@@ -42,7 +37,7 @@ function About() {
             <h1>About</h1>
             <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Текста, продолжил свое большой домах маленькая своих маленький использовало вершину путь, жаренные по всей. Образ путь живет все. Заголовок, буквенных собрал.</p>
             <hr />
-            <ToggleC />
+            <ToggleC dispatch={dispatch} />
             <hr />
             <div style={{textAlign: 'center'}}>
                 <img 

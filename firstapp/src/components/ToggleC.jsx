@@ -1,32 +1,13 @@
-import React, { useState, useReducer } from 'react'
+import React, { useContext } from 'react'
 import Button from 'react-bootstrap/Button'
-import { initialState } from '../Store'
+import { context } from '../Store'
 
 
-function reducerFunction(state, action) {
-    switch (action.type) {
-        case 'increment':
-            return { ...state, count: state.count + 1 }
-        case 'decrement':
-            return { ...state, count: state.count - 1 }
-        default:
-            throw new Error("Unexpected action")
-    }
-}
+export default function ToggleC({ dispatch }) {
+    const state = useContext(context)
 
-
-export default function ToggleC() {
-    // const [count, setCounter] = useState(0)
-
-    // Here we want to convert this useState counter into useReducer counter
-    const [state, dispatch] = useReducer(reducerFunction, initialState)
-
-    function increment() {
-        dispatch({ type: 'increment' })
-    }
-    function decrement() {
-        dispatch({ type: 'decrement' })
-    }
+    function increment() { dispatch({ type: 'increment' }) }
+    function decrement() { dispatch({ type: 'decrement' }) }
 
     return (
         <div>

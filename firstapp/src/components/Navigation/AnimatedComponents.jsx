@@ -8,14 +8,14 @@ import About from "../About.jsx"
 import NotFound from "../NotFound"
 import Posts from '../Posts'
 
-export default function AnimatedComponents() {
+export default function AnimatedComponents({ dispatch }) {
   const location = useLocation()
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navigation />} >
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="about" element={<About dispatch={ dispatch } />} />
           <Route path="posts" element={<Posts />} />
           <Route path="*" element={<NotFound />} />
         </Route>
