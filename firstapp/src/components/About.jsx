@@ -5,17 +5,22 @@ import Button from 'react-bootstrap/Button'
 import { useReducer } from 'react'
 
 const initialState = {
-    translateValue: 0
+    translateValue: 0,
+    left: "-200px",
+    right: "200px",
 }
+
 const reducer = (state, action) => {
     //* RULE:
     //! Everything that is returned from this function becomes the new state
 
     switch (action.move) {
         case 'left':
-            return { translateValue: "-200px"}
+            return { ...state, translateValue: state.left}
         case 'right':
-            return { translateValue: "200px"}
+            return { ...state, translateValue: state.right}
+        case 'reset':
+            return { ...state, translateValue: "0"}
         default:
             throw new Error("Unknown action")
     }
@@ -41,16 +46,22 @@ function About() {
             <hr />
             <div style={{textAlign: 'center'}}>
                 <img 
-                    style={{ transform: `translate(${state.translateValue})` }} 
+                    style={{ transform: `translateX(${state.translateValue})` }} 
                     src={img} 
                     width={100} 
                     height={100} 
                 /> <br />
                 <Button 
-                    variant='success'
+                    variant='warning'
                     onClick={() => { dispatch({ move: 'left' }) }}
                 >
                     Left
+                </Button>
+                <Button 
+                    variant='success'
+                    onClick={() => { dispatch({ move: 'reset' }) }}
+                >
+                    Reset
                 </Button>
                 <Button 
                     variant='primary'
