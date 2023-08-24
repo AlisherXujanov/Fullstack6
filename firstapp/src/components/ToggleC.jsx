@@ -1,19 +1,14 @@
 import React, { useState, useReducer } from 'react'
 import Button from 'react-bootstrap/Button'
+import { initialState } from '../Store'
 
-
-const initialState = { 
-    count: 0,
-    loading: false,
-    error: ''
-}
 
 function reducerFunction(state, action) {
     switch (action.type) {
         case 'increment':
-            return { count: state.count + 1 }
+            return { ...state, count: state.count + 1 }
         case 'decrement':
-            return { count: state.count - 1 }
+            return { ...state, count: state.count - 1 }
         default:
             throw new Error("Unexpected action")
     }
