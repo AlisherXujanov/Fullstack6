@@ -8,7 +8,8 @@ $white: #fff;
 .main-box-404 {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    z-index: 9999;
     left: 0;
     top: 0;
     background: linear-gradient(45deg, $l-purple, $t-purple);
