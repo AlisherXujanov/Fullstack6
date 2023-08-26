@@ -109,7 +109,7 @@ function Posts() {
             exit={exit}
         >
             <Container className='main-posts-body'>
-                <Accordion className="custom-accordion">
+                <Accordion id='my-accordion' className="custom-accordion">
                     <Accordion.Item className="custom-accordion-item" eventKey="0">
                         <Accordion.Header>Create a new post</Accordion.Header>
                         <Accordion.Body className="custom-accordion-body">
@@ -140,15 +140,15 @@ function Posts() {
                                 </div>
                                 <div className="form-control">
                                     <label htmlFor="where">Where</label>
-                                    <select 
-                                        id="country-select" 
+                                    <select
+                                        id="country-select"
                                         value={country}
                                         onChange={e => setCountry(e.target.value)}
                                     >
                                         <option value="">Select a location</option>
                                         {
-                                            locations.map(location => {
-                                                return <option value={location}>{location}</option>
+                                            locations.map((location, idx) => {
+                                                return <option key={idx} value={location}>{location}</option>
                                             })
                                         }
                                     </select>

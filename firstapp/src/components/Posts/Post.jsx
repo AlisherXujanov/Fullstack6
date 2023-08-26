@@ -4,17 +4,17 @@ import eye from '../../Assets/Images/eye.png'
 
 function Post(props) {
     return (
-        <div style={postStyle} class="post">
+        <div style={postStyle} className="post">
             <img src={''} width="100%" height="150" />
-            <div class="info">
+            <div className="info">
                 <h5>{props.title}</h5>
-                <p>
+                <p id='post-description-p'>
                     {props.description}
                 </p>
-                <div class="footer">
+                <div className="footer">
                     <div>
                         <img id='post-logo' src={eiffel} width="40" height="40" />
-                        <span class="name">{props.location + " - "} {props.date}</span>
+                        <span className="name">{props.location + " - "} {props.date}</span>
                     </div>
                     <div>
                         <img id='post-views' src={eye} width="25" height="15" />

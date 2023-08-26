@@ -9,7 +9,22 @@
         font-size: small;
         margin: 10px 0;
         color: #f8f8f8;
+        height: 50px;
+        overflow: auto;
+        padding-right: 10px;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+            border-radius: 20px;
+            background-color: gray;
+        }
+        &::-webkit-scrollbar-thumb {
+            width: 5px;
+            border-radius: 20px;
+            background-color: red;
+        }
     }
+
     .info {
         padding: 10px;
 
