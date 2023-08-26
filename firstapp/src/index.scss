@@ -1,16 +1,16 @@
 @import "./Assets/Styles/_init_";
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     transition: 0.2s ease-in-out;
+    font-family: 'Roboto', sans-serif;
 }
 body {
     min-height: 100vh;
     width: 100%;
-    font-family: "Ubuntu";
     background: url(Assets/Images/3.jpg) no-repeat;
     background-size: cover;
     background-position: center;

@@ -42,7 +42,6 @@ function Items({ elements, elClass, containerClass, itemsPerPage }) {
                     />
                 </Pagination>
             }
-
             <div className={containerClass ?? 'all-items-pagination'}>
                 {elements
                     .slice((page - 1) * itemsPerPage, page * itemsPerPage)
@@ -55,6 +54,9 @@ function Items({ elements, elClass, containerClass, itemsPerPage }) {
                             <Post
                                 title={element.title}
                                 description={element.description}
+                                views={element.views}
+                                date={element.date}
+                                location={element.location}
                             />
                         </div>
                     ))}

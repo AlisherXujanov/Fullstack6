@@ -1,6 +1,28 @@
 .post {
-    background: linear-gradient(45deg, #097949, #01de59);
-    padding: 15px;
-    border-radius: 5px;
-    color: snow;
+    background: linear-gradient(180deg, #171719, #1a1a1c, #1d1d1f, #202022, #232325);
+    border-radius: 10px;
+
+    h5 {
+        color: #f8f8f8;
+    }
+    p {
+        font-size: small;
+        margin: 10px 0;
+        color: #f8f8f8;
+    }
+    .info {
+        padding: 10px;
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            color: gray;
+        }
+    }
+    #post-logo {
+        margin-right: 10px;
+    }
+    #post-views {
+        margin: 0 10px;
+    }
 }

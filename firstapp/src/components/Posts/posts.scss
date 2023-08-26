@@ -16,6 +16,8 @@ form {
     text-align: center;
     background-color: rgb(0, 0, 0, 0.1);
 
+    select,
+    option,
     textarea,
     input {
         text-align: left;
@@ -33,6 +35,16 @@ form {
         &:focus {
             background-color: rgb(208, 208, 208, 50);
         }
+    }
+    select::-webkit-scrollbar {
+        width: 5px;
+        background-color: gray;
+        border-radius: 20px;
+    }
+    select::-webkit-scrollbar-thumb {
+        width: 5px;
+        background-color: cyan;
+        border-radius: 20px;
     }
     button {
         width: 100%;
