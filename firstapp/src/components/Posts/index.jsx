@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 import postsStyle from './posts.scss'
 import Pagination from './Pagination.jsx'
 import locations from '../../locations.js'
+import { POSTS_KEY_LS } from './usecases.js'
 
 function Posts() {
-    const POSTS_KEY_LS = 'posts'
     const [title, setTitle] = useState('')
     const [country, setCountry] = useState()
     const [description, setDescription] = useState('')

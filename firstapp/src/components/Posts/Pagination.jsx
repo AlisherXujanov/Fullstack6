@@ -51,13 +51,7 @@ function Items({ elements, elClass, containerClass, itemsPerPage }) {
                             id={element.id + "-" + elClass}
                             className={elClass}
                         >
-                            <Post
-                                title={element.title}
-                                description={element.description}
-                                views={element.views}
-                                date={element.date}
-                                location={element.location}
-                            />
+                            <Post post={element} />
                         </div>
                     ))}
             </div>
