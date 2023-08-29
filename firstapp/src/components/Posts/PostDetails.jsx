@@ -3,6 +3,7 @@ import './posts.scss'
 import { useParams } from 'react-router-dom'
 import { POSTS_KEY_LS } from './usecases.js'
 import img from '../../Assets/Images/1.jpg'
+import { motion } from 'framer-motion'
 
 export default function PostDetails() {
   const { id } = useParams()
@@ -11,12 +12,12 @@ export default function PostDetails() {
   console.log(id)
   const post = allPosts.find(el => id == el.id)
 
-  const initialMotion = { transform: '' }
-  const animate = { transform: '' }
-  const exit = { transform: '' }
+  const initialMotion = { transform: 'scale(0)' }
+  const animate = { transform: 'scale(1)' }
+  const exit = { transform: 'scale(0) rotate(720deg)' }
 
   return (
-    <div
+    <motion.div
       className='post-details'
       initial={initialMotion}
       animate={animate}
@@ -40,6 +41,6 @@ export default function PostDetails() {
           Views: <b>{post.views}</b>
         </p>
       </div>
-    </div>
+    </motion.div>
   )
 }

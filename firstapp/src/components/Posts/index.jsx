@@ -4,7 +4,12 @@ import { motion } from 'framer-motion'
 import postsStyle from './posts.scss'
 import Pagination from './Pagination.jsx'
 import locations from '../../locations.js'
-import { POSTS_KEY_LS } from './usecases.js'
+import { 
+    updateViewsForAllPosts,
+    setAllPostsIntoLS,
+    getAllPostsFromLS,
+    validate
+} from './usecases.js'
 
 function Posts() {
     const [title, setTitle] = useState('')
@@ -13,21 +18,12 @@ function Posts() {
     const [posts, setPosts] = useState(getAllPostsFromLS())
     const [errorFields, setErrorFields] = useState({})
 
-    function updageViewsForAllPosts() {
-        const updatedPosts = posts.map(post => {
-            post.views = post.views + 1
-            return post
-        })
-        setPosts(updatedPosts)
-    }
-    useEffect(() => {
-        updageViewsForAllPosts()
-    }, [])
+    useEffect(() => { setPosts(updateViewsForAllPosts(posts)) }, [])
 
     function submit(e) {
         e.preventDefault()
 
-        if (validated()) {
+        if (validatedInfo()) {
             const newPost = {
                 id: new Date().getTime(),
                 title: title,
@@ -41,38 +37,12 @@ function Posts() {
         }
     }
 
-    function setAllPostsIntoLS(posts) {
-        localStorage.setItem(POSTS_KEY_LS, JSON.stringify(posts))
-    }
+    useEffect(() => { setAllPostsIntoLS(posts) }, [posts])
 
-    function getAllPostsFromLS() {
-        const all_posts = localStorage.getItem(POSTS_KEY_LS)
-        return JSON.parse(all_posts) || []
-    }
-
-    useEffect(() => {
-        setAllPostsIntoLS(posts)
-    }, [posts])
-
-    function validated() {
-        const result = posts.find(post => post.title == title)
-
-        if (result) {
-            setErrorFields({ titleError: 'This title is already in use!' })
-            return false
-        } else if (title.length == 0) {
-            setErrorFields({ titleError: 'This field is required!' })
-            return false
-        } else if (!description) {
-            setErrorFields({ descriptionError: 'This field is required!' })
-            return false
-        } else if (!country) {
-            setErrorFields({ countryError: 'This field is required!' })
-            return false
-        } else {
-            setErrorFields({ titleError: "", descriptionError: "" })
-            return true
-        }
+    function validatedInfo() {
+        const validatedObj = validate(posts, title, description, country)
+        setErrorFields(validatedObj.result)
+        return validatedObj.validated
     }
 
     function setTitleFunction(e) {
