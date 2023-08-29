@@ -11,6 +11,27 @@ import {
     validate
 } from './usecases.js'
 
+
+// HOMEWORK
+// 1. Get all useState info into useReducer as a single state object
+// RU: Всю информацию useState получить в useReducer в виде одного объекта состояния
+
+// 2. Fill the home page with all posts that are available in the state
+// RU: Заполнить домашнюю страницу всеми постами, которые есть в состоянии
+
+// 3. In the posts page, change the page-name into create-post and only leave the 
+//    create-post-form in there 
+// RU: На странице постов изменить имя страницы на create-post и оставить там 
+//    только форму создания поста
+// 4. Write 5000 words in monkeytype in 450k
+// RU: Написать 5000 слов в monkeytype в 450к
+
+// Create your own project that is similar to this and push it into github
+// RU: Создайте свой собственный проект, похожий на этот, и отправьте его в github
+
+// SEE YOU ON 5th OF SEPTEMBER
+// RU: УВИДИМСЯ 5 СЕНТЯБРЯ
+
 function Posts() {
     const [title, setTitle] = useState('')
     const [country, setCountry] = useState()
