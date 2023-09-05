@@ -1,18 +1,22 @@
 import React, { useRef } from 'react'
 import emailjs from 'emailjs-com'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Email() {
   const form = useRef()
+  const notify = (msg) => toast(msg);
 
   const submit = (e) => {
     e.preventDefault(); // prevents the page from reloading when you hit “Send”
 
     emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID-')
       .then((result) => {
-        alert('Message Sent', result.text);
+        notify('Message Sent' + result.text);
         // show the user a success message
       }, (error) => {
-        alert('An error occurred, Please try again', error.text);
+        notify('An error occurred, Please try again' + error.text);
         // show the user an error
       });
 
@@ -21,6 +25,7 @@ export default function Email() {
 
   return (
     <div className="email-form">
+      <ToastContainer />
       <h1>Send Email</h1>
 
       <form ref={form} onSubmit={(e) => submit(e)}>
