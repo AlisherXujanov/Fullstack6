@@ -9,6 +9,7 @@ import NotFound from "../NotFound"
 import Posts from '../Posts'
 import PostDetails from '../Posts/PostDetails.jsx'
 import Translation from '../Translation.jsx'
+import Email from '../Email.jsx'
 
 export default function AnimatedComponents({ dispatch }) {
   const location = useLocation()
@@ -20,6 +21,7 @@ export default function AnimatedComponents({ dispatch }) {
           <Route path="about" element={<About dispatch={ dispatch } />} />
           <Route path="posts" element={<Posts />} />
           <Route path="translation" element={<Translation />} />
+          <Route path="email" element={<Email />} />
           <Route path="post-details/:id" element={<PostDetails />} />
           <Route path="*" element={<NotFound />} />
         </Route>

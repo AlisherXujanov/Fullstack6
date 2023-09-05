@@ -41,6 +41,7 @@ function Nav() {
                 <Link to="/about" onClick={playAudio}>About</Link>
                 <Link to="/posts" onClick={playAudio}>Posts</Link>
                 <Link to="/translation" onClick={playAudio}>Translation</Link>
+                <Link to="/email" onClick={playAudio}>Emails</Link>
 
                 <a id='theme-link' href="#" onClick={changeTheme}>
                     <Theme theme={theme} />
