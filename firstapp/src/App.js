@@ -3,18 +3,15 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import AnimatedComponents from './components/Navigation/AnimatedComponents';
 import { context, initialState, globalReducer } from './Store';
 import { useReducer } from 'react';
+import Test from './components/Test.jsx'
 
 function App() {
     const [state, dispatch] = useReducer(globalReducer, initialState)
 
     return (
-        <context.Provider value={state}>
-            <div className="App">
-                <BrowserRouter>
-                    <AnimatedComponents dispatch={dispatch} />
-                </BrowserRouter>
-            </div>
-        </context.Provider>
+        <div className="App">
+            <Test />
+        </div>
     );
 }
 
