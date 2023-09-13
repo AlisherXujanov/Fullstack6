@@ -48,28 +48,6 @@ function Test(props) {
                 </Button>
             </div>
 
-            <div style={{ marginTop: "300px" }}>
-                <h1 style={{ color: textColor }}>
-                    {count}
-                </h1>
-                <hr />
-
-                <button onClick={() => { setColor('red') }}>Red</button>
-                <button onClick={() => { setColor('green') }}>Green</button>
-
-                <hr />
-                <button
-                    onClick={() => { setCount(count + 1) }}
-                >
-                    Increment +
-                </button>
-
-                <button
-                    onClick={() => { setCount(count - 1) }}
-                >
-                    Decrement -
-                </button>
-            </div>
         </div>
     )
 }
