@@ -3,11 +3,11 @@ import Button from 'react-bootstrap/Button'
 import { context } from '../Store'
 
 
-export default function ToggleC({ dispatch }) {
+export default function ToggleC() {
     const state = useContext(context)
 
-    function increment() { dispatch({ type: 'increment' }) }
-    function decrement() { dispatch({ type: 'decrement' }) }
+    function increment() { state.dispatch({ type: 'increment' }) }
+    function decrement() { state.dispatch({ type: 'decrement' }) }
 
     return (
         <div>

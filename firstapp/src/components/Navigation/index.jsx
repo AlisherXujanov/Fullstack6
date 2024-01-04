@@ -10,13 +10,6 @@ const Navigation = () => {
                <CarouselComponent />
             </header>
 
-            <ul>
-                <li>
-                    <Link to={'/'}>Home</Link>
-                    <Link to={'test/'}>Test</Link>
-                </li>
-            </ul>
-
             <Nav />
         </div>
     )
